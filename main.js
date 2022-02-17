@@ -11,7 +11,7 @@ const btns = document.querySelectorAll('.btns')
 const header = document.querySelector('.append')
 const search = document.querySelector('.btn')
 const pg = document.querySelector('.pn')
-let limit = 0
+let limit = 1
 
 search.onclick = () => {
     let input = document.querySelectorAll('input')
