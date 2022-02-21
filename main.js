@@ -29,7 +29,7 @@ btns[0].onclick = async () => {
     renderFilm(response,response.page)
     saveActionLocal('top_rated')
     pages(1)
-    limit=0
+    limit=1
     clearInput()
 }
 
@@ -40,7 +40,7 @@ btns[1].onclick = async () => {
     saveActionLocal('popular')
     clearInput()
     pages(1)
-    limit=0
+    limit=1
 }
 
 btns[2].onclick = async () => {
@@ -50,7 +50,7 @@ btns[2].onclick = async () => {
     saveActionLocal('upcoming')
     clearInput()
     pages(1)
-    limit=0
+    limit=1
 }
 
 function clearInput (){
